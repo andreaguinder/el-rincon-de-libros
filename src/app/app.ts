@@ -1,13 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
-  imports: [RouterOutlet, RouterLink],
   selector: 'app-root',
-  styleUrl: './app.css',
+  standalone: true,
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
-
 export class App {
-  protected readonly title = signal('clase-1');
+  isMenuOpen = false;
 }

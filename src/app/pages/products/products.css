@@ -48,9 +48,9 @@
 }
 
 .sidebar button.active {
-  background-color: #007bff;
+  background-color: brown;
   color: #fff;
-  border-color: #007bff;
+  border-color: brown;
   font-weight: 600;
 }
 
@@ -120,7 +120,7 @@
   }
 
   .sidebar button.active {
-    background-color: #007bff;
+    background-color: brown;
     color: #fff;
   }
 

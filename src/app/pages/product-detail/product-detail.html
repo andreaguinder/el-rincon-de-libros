@@ -1,8 +1,10 @@
 <div class="detail-container">
-  <a routerLink="/products" class="btn-back">← Volver a productos</a>
+  <a routerLink="/products" class="btn-back">← Volver al catálogo</a>
 
-  @if (loading) {
-    <p class="loading-state">Cargando detalles del libro...</p>
+@if (loading) {
+    <div class="loader-container">
+      <app-loader></app-loader>
+    </div>
   } @else if (product) {
     <article class="detail-card">
       <div class="detail-image">

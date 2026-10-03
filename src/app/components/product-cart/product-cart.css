@@ -5,8 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-min-height: 660px;
-    gap: 8px;
+min-height:  590px;
     background-color: #FFFFFF;
 }
 
@@ -17,7 +16,9 @@ min-height: 660px;
 }
 
 .product-images img {
-    width: 280px;
+    width: 220px;
+    object-fit: contain;
+    max-height: 330px;
 }
 
 .product-info {
@@ -26,11 +27,12 @@ min-height: 660px;
     justify-content: center;
     align-items: flex-start;
     gap: 12px;
+    width: 100%;
 }
 
 .product-info h2,
 .categoria {
-color: #0956b4;
+color: rgb(129, 3, 3);
 font-weight: 700;
 }
 
@@ -39,18 +41,24 @@ font-weight: 700;
 }
 
 .precio {
-    color: #083164;
+    color: brown;
     font-weight: 700;
     font-size: 20px;
     margin: auto;
 }
 
-button {
-    background-color: #083164;
-    color: #FFFFFF;
-    font-weight: 600;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
+.actions {
     width: 100%;
+}
+a.btn-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+text-decoration: none;
+background-color: brown;
+font-size: 16px;
+color: #FFFFFF;
+padding: 8px;
+border-radius: 4px;
+width: 100%;
 }

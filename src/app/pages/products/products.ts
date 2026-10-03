@@ -4,17 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from '../../services/products';
 import { Product } from '../../interfaces/IProduct';
 import { ProductCart } from '../../components/product-cart/product-cart';
+import { Loader } from '../../components/loader/loader';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, FormsModule, ProductCart],
+  imports: [CommonModule, FormsModule, ProductCart, Loader],
   templateUrl: './products.html',
   styleUrl: './products.css'
 })
 export class Products implements OnInit {
   private productService = inject(ProductService);
-  private cdr = inject(ChangeDetectorRef); // 👈 1. Inyectamos ChangeDetectorRef
+  private cdr = inject(ChangeDetectorRef);
 
   products = signal<Product[]>([]);
   selectedCategory = signal<string>('all');

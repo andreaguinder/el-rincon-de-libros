@@ -1,12 +1,35 @@
-<header>
-  <nav>
-    <ul>
-      <li><a routerLink="/">Inicio</a></li>
-      <li><a routerLink="/products">Productos</a></li>
-      <li><a routerLink="/about-us">Nosotros</a></li>
-      <li><a routerLink="/contacto">contacto</a></li>
-    </ul>
-  </nav>
-</header>
+<div class="layout-container">
+  <header>
+    <div class="logo">
+      <a routerLink="/">
+        <img src="/logo-libros.png" alt="Logo de El Rincón de Libros">
+      </a>
+    </div>
 
-<router-outlet></router-outlet>
+    <!-- Botón Hamburguesa (visible en mobile) -->
+    <button class="hamburger" (click)="isMenuOpen = !isMenuOpen" [class.open]="isMenuOpen" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navegación -->
+    <nav [class.active]="isMenuOpen">
+      <ul>
+        <li><a routerLink="/" (click)="isMenuOpen = false">Inicio</a></li>
+        <li><a routerLink="/products" (click)="isMenuOpen = false">Libros</a></li>
+        <li><a routerLink="/about-us" (click)="isMenuOpen = false">Reseñas</a></li>
+        <li><a routerLink="/contacto" (click)="isMenuOpen = false">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <p>El Rincón de Libros fue desarrollado con fines académicos.</p>
+    <p>© 2026 Andrea Guinder. Todos los derechos reservados.</p>
+  </footer>
+</div>

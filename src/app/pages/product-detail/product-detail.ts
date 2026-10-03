@@ -1,20 +1,22 @@
 // pages/product-detail/product-detail.ts
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../../services/products';
 import { CoverUrlPipe } from '../../pipes/cover-url-pipe';
+import { Loader } from '../../components/loader/loader';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, CoverUrlPipe],
+  imports: [CommonModule, RouterLink, CoverUrlPipe, Loader],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css'
 })
 export class ProductDetail implements OnInit {
   private route = inject(ActivatedRoute);
   private productService = inject(ProductService);
+  private cdr = inject(ChangeDetectorRef);
 
   id: string = '';
   product: any = null;
@@ -50,6 +52,7 @@ export class ProductDetail implements OnInit {
           }
           
           this.loading = false;
+          this.cdr.detectChanges();
         },
         error: (err) => {
           console.error('Error al cargar detalle:', err);

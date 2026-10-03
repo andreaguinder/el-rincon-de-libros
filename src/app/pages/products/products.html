@@ -31,7 +31,9 @@
 
     <!-- Estado de Carga / Grilla de Productos -->
 @if (loading()) {
-  <p class="loading-state">Cargando libros...</p>
+      <div class="loader-container">
+      <app-loader></app-loader>
+    </div>
 } @else {
   <section class="product-grid">
     @for (book of products(); track book.key || $index) {
