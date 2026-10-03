@@ -1,6 +1,5 @@
 <div class="products-layout">
   
-  <!-- Sidebar izquierdo de categorías -->
   <aside class="sidebar">
     <h3>Categorías</h3>
     <ul>
@@ -16,10 +15,8 @@
     </ul>
   </aside>
 
-  <!-- Contenido principal (Buscador + Lista) -->
   <main class="products-content">
     
-    <!-- Buscador por nombre / título -->
     <section class="search-bar">
       <input 
         type="text" 
@@ -29,7 +26,6 @@
       />
     </section>
 
-    <!-- Estado de Carga / Grilla de Productos -->
 @if (loading()) {
       <div class="loader-container">
       <app-loader></app-loader>

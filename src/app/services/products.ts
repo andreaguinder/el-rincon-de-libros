@@ -14,8 +14,6 @@ export class ProductService {
   let term = query.trim();
 
   if (!term) {
-    // Si eligió 'all', busca libros en general ('books' o 'bestsellers')
-    // Si eligió otra categoría, busca por esa categoría (ej: 'fantasy', 'history')
     term = category !== 'all' ? category : 'bestsellers';
   }
 

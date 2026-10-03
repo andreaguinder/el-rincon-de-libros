@@ -1,0 +1,59 @@
+form {
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    padding: 16px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.info-persona {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+input {
+    min-height: 32px;
+    border-radius: 4px;
+    padding: 2px 4px;
+    width: 100%;
+}
+textarea {
+    width: 100%;
+    min-height: 64px;
+        border-radius: 4px;
+    padding: 2px 4px;
+}
+
+button {
+    padding: 8px 12px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+label {
+    white-space: nowrap;
+}
+@media screen and (min-width: 768px) {
+
+    form {
+        padding: 32px;
+    }
+    
+    .info-persona {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

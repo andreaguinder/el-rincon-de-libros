@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true
 })
 export class CoverUrlPipe implements PipeTransform {
-  transform(coverId?: number, size: 'S' | 'M' | 'L' = 'M'): string {
+transform(coverId?: number, size: 'S' | 'M' | 'L' = 'M'): string {
     if (!coverId) {
-      return 'assets/no-cover.png'; // Foto por defecto si el libro no tiene portada
+      return ''; 
     }
     return `https://covers.openlibrary.org/b/id/${coverId}-${size}.jpg`;
   }

@@ -6,20 +6,18 @@
       </a>
     </div>
 
-    <!-- Botón Hamburguesa (visible en mobile) -->
     <button class="hamburger" (click)="isMenuOpen = !isMenuOpen" [class.open]="isMenuOpen" aria-label="Abrir menú">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Navegación -->
     <nav [class.active]="isMenuOpen">
       <ul>
         <li><a routerLink="/" (click)="isMenuOpen = false">Inicio</a></li>
         <li><a routerLink="/products" (click)="isMenuOpen = false">Libros</a></li>
-        <li><a routerLink="/about-us" (click)="isMenuOpen = false">Reseñas</a></li>
-        <li><a routerLink="/contacto" (click)="isMenuOpen = false">Contacto</a></li>
+        <li><a routerLink="/reseñas" (click)="isMenuOpen = false">Reseñas</a></li>
+        <li><a routerLink="/nosotros" (click)="isMenuOpen = false">Nosotros</a></li>
       </ul>
     </nav>
   </header>

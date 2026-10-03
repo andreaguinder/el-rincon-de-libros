@@ -1,0 +1,30 @@
+<section>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="info-persona">
+    <label for="name">Nombre:</label>
+    <input id="name" formControlName="name" type="text" />
+    @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+      <div class="error-message">
+        El nombre es obligatorio.
+      </div>
+    }
+
+    <label for="email">Correo electrónico:</label>
+    <input id="email" formControlName="email" type="email" />
+    @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+      <div class="error-message">
+        Ingresa un correo electrónico válido.
+      </div>
+    }
+</div>
+    <label for="message">Escribí tu reseña:</label>
+    <textarea id="message" formControlName="message"></textarea>
+    @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+      <div class="error-message">
+        La reseña es obligatoria.
+      </div>
+    }
+
+    <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+  </form> 
+</section>

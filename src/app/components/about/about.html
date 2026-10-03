@@ -1,0 +1,25 @@
+<section class="about-section">
+  <div class="about-header">
+    <h2>Sobre Nosotros</h2>
+    <p class="subtitle">Conocé a las mentes detrás de El Rincón del Libro</p>
+    <p class="main-description">
+      Somos un grupo de apasionados por la lectura que un buen día decidió transformar 
+      su amor por los libros en un punto de encuentro para toda la comunidad.
+    </p>
+  </div>
+
+  <div class="founders-grid">
+    @for (person of founders; track person.id) {
+      <article class="founder-card">
+        <div class="image-container">
+          <img [src]="person.photoUrl" [alt]="person.fullName" />
+        </div>
+        <div class="founder-info">
+          <h3>{{ person.fullName }}</h3>
+          <span class="founder-role">{{ person.role }}</span>
+          <p class="founder-bio">"{{ person.bio }}"</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

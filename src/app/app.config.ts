@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZonelessChangeDetection(), // 👈 Le dice a Angular que NO use Zone.js
+    provideZonelessChangeDetection(),
     provideRouter(routes),
     provideHttpClient()
   ]

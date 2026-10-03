@@ -1,2 +1,59 @@
-<h1>El rincón de libros</h1>
-<h2>prueba</h2>
+<section class="container">
+  <div class="hero-content">
+    
+    <h1 class="title">
+      "Un libro es la prueba de que los seres humanos son capaces de hacer magia."
+      <span class="subtitle">— Carl Sagan</span>
+    </h1>
+
+    <article class="card">
+      <span class="badge">Nuestra Historia</span>
+      <h2>De una charla de café a un rincón para todos</h2>
+      <p>
+        <strong>El Rincón del Libro</strong> nació de la pasión compartida de cuatro amigos —Valeria, Martín, Clara y Esteban— 
+        que solían pasar horas debatiendo sobre literatura, compartiendo hallazgos y recomendándose lecturas inolvidables.
+      </p>
+      <p>
+        Con la convicción de que un buen libro puede cambiar la forma en que vemos el mundo y la tecnología como aliada, 
+        decidieron crear esta comunidad digital. Un espacio pensado para conectar a lectores de todos los rincones, 
+        redescubrir clásicos, explorar nuevas voces y mantener viva la magia de la lectura.
+      </p>
+    </article>
+
+    <div class="features-grid">
+      <div class="item">
+        <lucide-icon [img]="BookIcon" [size]="36" class="feature-icon"></lucide-icon>
+        <h3>Catálogo Vivo</h3>
+        <p>Integrado en tiempo real para explorar miles de obras y ediciones de todo el mundo.</p>
+      </div>
+      <div class="item">
+        <lucide-icon [img]="ReviewIcon" [size]="36" class="feature-icon"></lucide-icon>
+        <h3>Reseñas Honestas</h3>
+        <p>Opiniones auténticas escritas por lectores apasionados que buscan orientar tu próxima lectura.</p>
+      </div>
+      <div class="item">
+        <lucide-icon [img]="UsersIcon" [size]="36" class="feature-icon"></lucide-icon>
+        <h3>Comunidad Abierta</h3>
+        <p>Un punto de encuentro inclusivo donde cada perspectiva y recomendación suma valor.</p>
+      </div>
+    </div>
+
+    <div class="container-call">
+      <h2>Sumá tu voz a la comunidad</h2>
+      <p>
+        ¿Leíste algo últimamente que te dejó pensando? Compartí tu opinión, descubrí qué están recomendando 
+        otros lectores y ayudanos a seguir expandiendo este rincón.
+      </p>
+
+      <div class="actions">
+        <a routerLink="/reseñas" class="btn-primary">
+          Explorar reseñas de la comunidad →
+        </a>
+        <a routerLink="/nosotros" class="btn-secondary">
+          Conocé a los fundadores
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

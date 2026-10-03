@@ -7,12 +7,13 @@
     align-items: center;
 min-height:  590px;
     background-color: #FFFFFF;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    scale: 1.025;
-    transition: smooth;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.55);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .product-images img {

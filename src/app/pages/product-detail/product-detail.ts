@@ -1,4 +1,3 @@
-// pages/product-detail/product-detail.ts
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -25,7 +24,7 @@ export class ProductDetail implements OnInit {
   descriptionText: string = '';
 
   ngOnInit() {
-    // Capturamos el parámetro 'id' de la URL (ej: /product/OL45804W -> id = "OL45804W")
+
     this.id = this.route.snapshot.paramMap.get('id') || '';
 
     if (this.id) {
@@ -36,12 +35,10 @@ export class ProductDetail implements OnInit {
           if (data) {
             this.product = data;
 
-            // Portada desde la respuesta del ID de la obra
             if (data.covers && data.covers.length > 0) {
               this.coverId = data.covers[0];
             }
 
-            // Normalización de la descripción
             if (typeof data.description === 'string') {
               this.descriptionText = data.description;
             } else if (data.description?.value) {

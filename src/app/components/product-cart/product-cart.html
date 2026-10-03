@@ -1,7 +1,7 @@
 <div class="product-card">
   <div class="product-images">
-    <!-- Usamos el Pipe coverUrl para la imagen -->
-    <img [src]="product.cover_i | coverUrl:'M'" [alt]="'Portada de ' + product.title">
+    <!-- Si la iamgen esta rota, inserta el placeholder que cree -->
+    <img [src]="product.cover_i | coverUrl:'M'" [alt]="'Portada de ' + product.title" (error)="onImageError($event)">
   </div>
 
   <div class="product-info">
@@ -18,21 +18,6 @@
       <strong>Autor:</strong> {{ product.author_name?.join(', ') || 'Autor desconocido' }}
     </p>
 
-    <!-- Rating promedio si la API lo incluye -->
-    @if (product.ratings_average) {
-      <div class="product-rating">
-        <span class="rating-rate">⭐ {{ product.ratings_average | number:'1.1-1' }}</span>
-        @if (product.ratings_count) {
-          <span class="rating-count">({{ product.ratings_count }} valoraciones)</span>
-        }
-      </div>
-    } @else {
-      <div class="product-rating">
-        <span class="rating-count">Sin valoraciones aún</span>
-      </div>
-    }
-
-    <!-- Botón para ver más información / reseñas del libro -->
     <div class="actions">
       <a 
         [routerLink]="['/products', product.key.replace('/works/', '')]" 

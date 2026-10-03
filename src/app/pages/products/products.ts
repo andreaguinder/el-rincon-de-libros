@@ -54,13 +54,13 @@ export class Products implements OnInit {
         console.log('Libros recibidos:', data);
         this.products.set(data || []);
         this.loading.set(false);
-        this.cdr.markForCheck(); // 👈 2. Le avisamos a Angular que refresque la pantalla
+        this.cdr.markForCheck(); 
       },
       error: (err: unknown) => {
         console.error('Error al traer libros:', err);
         this.products.set([]);
         this.loading.set(false);
-        this.cdr.markForCheck(); // 👈 3. También en caso de error
+        this.cdr.markForCheck(); 
       }
     });
   }

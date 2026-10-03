@@ -1,17 +1,12 @@
-/* ==========================================
-   1. MOBILE FIRST (0px a 767px)
-   ========================================== */
-
 .products-layout {
   display: flex;
-  flex-direction: column; /* En mobile va todo uno abajo del otro */
+  flex-direction: column; 
   gap: 1.5rem;
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Sidebar en Mobile (se muestra en horizontal o lista compacta arriba) */
 .sidebar {
   width: 100%;
   border-bottom: 1px solid #e0e0e0;
@@ -29,7 +24,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap; /* En mobile las categorías se acomodan como chips/botones horizontalmente */
+  flex-wrap: wrap; 
   gap: 0.5rem;
 }
 
@@ -54,7 +49,6 @@
   font-weight: 600;
 }
 
-/* Contenido Principal */
 .products-content {
   width: 100%;
 }
@@ -69,28 +63,21 @@
   box-sizing: border-box;
 }
 
-/* Grilla en Mobile: 1 sola columna o mínimo 180px */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 
-
-/* ==========================================
-   2. DESKTOP / TABLET (min-width: 768px)
-   ========================================== */
-
 @media (min-width: 768px) {
   .products-layout {
-    flex-direction: row; /* Pasa a Sidebar a la izquierda y Contenido a la derecha */
+    flex-direction: row; 
     gap: 2rem;
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  /* Sidebar lateral vertical */
   .sidebar {
     width: 220px;
     flex-shrink: 0;
@@ -101,7 +88,7 @@
   }
 
   .sidebar ul {
-    flex-direction: column; /* Vuelve a ser lista vertical */
+    flex-direction: column;
     gap: 0.25rem;
   }
 
@@ -124,20 +111,13 @@
     color: #fff;
   }
 
-  /* La grilla se adapta sola calculando tarjetas de min 230px */
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 1.5rem;
   }
 }
 
-
-/* ==========================================
-   3. PANATALLAS GRANDES (min-width: 1024px)
-   ========================================== */
-
 @media (min-width: 1024px) {
-  /* Al tener más espacio, ajustamos el minmax para que quepan holgadamente 3 o 4 columnas */
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1.75rem;

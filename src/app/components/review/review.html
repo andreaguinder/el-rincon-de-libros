@@ -1,0 +1,33 @@
+<section class="reviews-section">
+  <h2>Reseñas de la Comunidad</h2>
+  <p class="subtitle">Descubrí lo que opinan nuestros lectores sobre sus obras favoritas</p>
+
+  <div class="reviews-grid">
+    @for (review of reviews; track review.id) {
+      <article class="review-card">
+        <div class="review-header">
+          <div class="avatar-placeholder">
+            {{ review.userName.charAt(0) }}
+          </div>
+          <div class="user-info">
+            <h3 class="user-name">{{ review.userName }}</h3>
+            <div class="stars">
+              ★ {{ review.rating }}/5
+            </div>
+          </div>
+        </div>
+
+        <div class="review-body">
+          <p class="comment">"{{ review.comment }}"</p>
+        </div>
+
+        <div class="review-footer">
+          <span class="book-title">📖 {{ review.bookTitle }}</span>
+          <a [routerLink]="['/products', review.bookWorkId]" class="btn-detail">
+            Ver libro →
+          </a>
+        </div>
+      </article>
+    }
+  </div>
+</section>
