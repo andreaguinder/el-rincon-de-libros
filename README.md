@@ -1,59 +1,68 @@
-# ElRinconDeLibros
+# El Rincón del Libros - Aplicación Multisitio en Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.7.
+Aplicación web desarrollada en Angular 17+ para la gestión y exploración de un catálogo literario, aplicando enrutamiento avanzado, componentes standalone, rutas dinámicas e integración en tiempo real con una API pública.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Características y Consigna
 
+- **Arquitectura de Componentes Standalone:** Organización modular con separación clara de responsabilidades en componentes, páginas, servicios e interfaces.
+- **Routing y Rutas Dinámicas:** Configuración de rutas estáticas (`/`, `/products`, `/about`, `/contact`) y una ruta dinámica (`/products/:id`) para la visualización detallada de cada obra.
+- **Navegación Interna:** Uso exclusivo de `routerLink` y `router-outlet` para una experiencia de navegación fluida entre vistas.
+- **Consumo de API Pública:** Integración con la **Open Library API** (`/works/` endpoint) mediante un servicio de Angular dedicado para la obtención dinámica de catálogos y detalles literarios.
+- **Interactividad y Formularios:** Inclusión de formularios reactivos con validaciones y sistema de manejo de errores de carga de imágenes con respaldos mediante recursos locales en SVG.
+
+---
+
+## 🛠️ Instalación y Ejecución
+
+Sigue estos pasos para clonar el repositorio e iniciar la aplicación localmente:
+
+### 1. Clonar el repositorio
 ```bash
-ng serve
+git clone [https://github.com/andreaguinder/el-rincon-de-libros.git](https://github.com/andreaguinder/el-rincon-de-libros.git)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### 2. Instalar dependencias
 ```bash
-ng generate component component-name
+    npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+### 3. Mostrar en el navegador
 ```bash
-ng generate --help
+    ng serve
 ```
 
-## Building
+Una vez que el servidor esté en marcha, abrí tu navegador e ingresá a:
 
-To build the project run:
+http://localhost:4200/ (o el que te indique la consola si lo tenés ocupado)
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🌐 Despliegue en Producción
 
-## Running unit tests
+Plataforma elegida: Vercel
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Enlace a la aplicación: [[Proyecto en Vercel](https://gestion-de-productos-angular.vercel.app/)]
 
-```bash
-ng test
-```
+## Capturas de pantalla
 
-## Running end-to-end tests
+En public/proyecto
 
-For end-to-end (e2e) testing, run:
+## 👤 Créditos y Datos de la Entrega
 
-```bash
-ng e2e
-```
+Estudiante: Andrea Guinder
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Curso: 181802
 
-## Additional Resources
+Módulo / Unidad: TP Final — Aplicación Multisitio con Angular
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Entrega: Trabajo Práctico Final
+
+## 📚 Bibliografía y Fuentes
+
+Documentación oficial de Angular (angular.dev)
+
+Open Library API (openlibrary.org/developers)
+
+Asistencia con Gemini IA

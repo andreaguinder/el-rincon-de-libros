@@ -26,12 +26,14 @@ input {
     border-radius: 4px;
     padding: 2px 4px;
     width: 100%;
+    border: none;
 }
 textarea {
     width: 100%;
     min-height: 64px;
         border-radius: 4px;
     padding: 2px 4px;
+    border: none;
 }
 
 button {
@@ -40,6 +42,7 @@ button {
     border-radius: 4px;
     font-weight: 500;
     font-size: 16px;
+    border: none;
 }
 
 label {
@@ -50,7 +53,7 @@ label {
     form {
         padding: 32px;
     }
-    
+
     .info-persona {
         flex-direction: row;
         justify-content: center;
