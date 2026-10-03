@@ -60,4 +60,9 @@ export class ProductDetail implements OnInit {
       this.loading = false;
     }
   }
+
+    onImageError(event: Event) {
+    const element = event.target as HTMLImageElement;
+    element.src = 'placeholder-book.svg'; 
+  }
 }

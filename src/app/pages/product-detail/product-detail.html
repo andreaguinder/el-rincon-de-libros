@@ -8,7 +8,7 @@
   } @else if (product) {
     <article class="detail-card">
       <div class="detail-image">
-        <img [src]="coverId | coverUrl:'L'" [alt]="product.title" />
+        <img [src]="coverId | coverUrl:'L'" [alt]="product.title" (error)="onImageError($event)"/>
       </div>
 
       <div class="detail-content">
