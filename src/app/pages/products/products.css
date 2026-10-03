@@ -1,0 +1,145 @@
+/* ==========================================
+   1. MOBILE FIRST (0px a 767px)
+   ========================================== */
+
+.products-layout {
+  display: flex;
+  flex-direction: column; /* En mobile va todo uno abajo del otro */
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sidebar en Mobile (se muestra en horizontal o lista compacta arriba) */
+.sidebar {
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* En mobile las categorías se acomodan como chips/botones horizontalmente */
+  gap: 0.5rem;
+}
+
+.sidebar li {
+  margin: 0;
+}
+
+.sidebar button {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  font-weight: 600;
+}
+
+/* Contenido Principal */
+.products-content {
+  width: 100%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Grilla en Mobile: 1 sola columna o mínimo 180px */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+
+/* ==========================================
+   2. DESKTOP / TABLET (min-width: 768px)
+   ========================================== */
+
+@media (min-width: 768px) {
+  .products-layout {
+    flex-direction: row; /* Pasa a Sidebar a la izquierda y Contenido a la derecha */
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar lateral vertical */
+  .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    border-bottom: none;
+    border-right: 1px solid #e0e0e0;
+    padding-bottom: 0;
+    padding-right: 1.5rem;
+  }
+
+  .sidebar ul {
+    flex-direction: column; /* Vuelve a ser lista vertical */
+    gap: 0.25rem;
+  }
+
+  .sidebar button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .sidebar button:hover {
+    background-color: #f5f5f5;
+  }
+
+  .sidebar button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* La grilla se adapta sola calculando tarjetas de min 230px */
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+
+/* ==========================================
+   3. PANATALLAS GRANDES (min-width: 1024px)
+   ========================================== */
+
+@media (min-width: 1024px) {
+  /* Al tener más espacio, ajustamos el minmax para que quepan holgadamente 3 o 4 columnas */
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.75rem;
+  }
+}

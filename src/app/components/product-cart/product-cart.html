@@ -1,0 +1,45 @@
+<div class="product-card">
+  <div class="product-images">
+    <!-- Usamos el Pipe coverUrl para la imagen -->
+    <img [src]="product.cover_i | coverUrl:'M'" [alt]="'Portada de ' + product.title">
+  </div>
+
+  <div class="product-info">
+    <small>
+      Año: {{ product.first_publish_year || 'S/N' }} 
+      @if (product.language?.length) {
+        | Idiomas: {{ product.language?.slice(0, 3)?.join(', ') }}
+      }
+    </small>
+
+    <h2>{{ product.title }}</h2>
+
+    <p class="author">
+      <strong>Autor:</strong> {{ product.author_name?.join(', ') || 'Autor desconocido' }}
+    </p>
+
+    <!-- Rating promedio si la API lo incluye -->
+    @if (product.ratings_average) {
+      <div class="product-rating">
+        <span class="rating-rate">⭐ {{ product.ratings_average | number:'1.1-1' }}</span>
+        @if (product.ratings_count) {
+          <span class="rating-count">({{ product.ratings_count }} valoraciones)</span>
+        }
+      </div>
+    } @else {
+      <div class="product-rating">
+        <span class="rating-count">Sin valoraciones aún</span>
+      </div>
+    }
+
+    <!-- Botón para ver más información / reseñas del libro -->
+    <div class="actions">
+      <a 
+        [routerLink]="['/products', product.key.replace('/works/', '')]" 
+        class="btn-detail"
+      >
+        Ver detalles y reseñas
+      </a>
+    </div>
+  </div>
+</div>

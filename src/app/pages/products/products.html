@@ -1,0 +1,46 @@
+<div class="products-layout">
+  
+  <!-- Sidebar izquierdo de categorías -->
+  <aside class="sidebar">
+    <h3>Categorías</h3>
+    <ul>
+      @for (cat of categories; track cat.value) {
+        <li>
+          <button 
+            [class.active]="selectedCategory() === cat.value && !searchTerm()" 
+            (click)="selectCategory(cat.value)">
+            {{ cat.label }}
+          </button>
+        </li>
+      }
+    </ul>
+  </aside>
+
+  <!-- Contenido principal (Buscador + Lista) -->
+  <main class="products-content">
+    
+    <!-- Buscador por nombre / título -->
+    <section class="search-bar">
+      <input 
+        type="text" 
+        placeholder="Buscar libro por título o autor..." 
+        [ngModel]="searchTerm()" 
+        (ngModelChange)="searchTerm.set($event); onSearchChange()"
+      />
+    </section>
+
+    <!-- Estado de Carga / Grilla de Productos -->
+@if (loading()) {
+  <p class="loading-state">Cargando libros...</p>
+} @else {
+  <section class="product-grid">
+    @for (book of products(); track book.key || $index) {
+      <app-product-cart [product]="book"></app-product-cart>
+    } @empty {
+      <p class="empty-state">No se encontraron libros para esta búsqueda.</p>
+    }
+  </section>
+}
+
+  </main>
+</div>

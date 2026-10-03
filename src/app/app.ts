@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { Home } from './pages/home/home';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
-  imports: [Home],
+  imports: [RouterOutlet, RouterLink],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
+
 export class App {
-  protected readonly title = signal('el-rincon-de-libros');
+  protected readonly title = signal('clase-1');
 }

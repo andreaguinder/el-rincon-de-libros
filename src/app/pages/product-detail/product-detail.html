@@ -1,0 +1,30 @@
+<div class="detail-container">
+  <a routerLink="/products" class="btn-back">← Volver a productos</a>
+
+  @if (loading) {
+    <p class="loading-state">Cargando detalles del libro...</p>
+  } @else if (product) {
+    <article class="detail-card">
+      <div class="detail-image">
+        <img [src]="coverId | coverUrl:'L'" [alt]="product.title" />
+      </div>
+
+      <div class="detail-content">
+        <h1>{{ product.title }}</h1>
+
+        @if (product.subjects?.length) {
+          <div class="tags">
+            @for (subject of product.subjects.slice(0, 5); track subject) {
+              <span class="tag">{{ subject }}</span>
+            }
+          </div>
+        }
+
+        <h3>Reseña / Descripción:</h3>
+        <p class="description">{{ descriptionText }}</p>
+      </div>
+    </article>
+  } @else {
+    <p class="error-state">No se pudo encontrar la información de este libro.</p>
+  }
+</div>
