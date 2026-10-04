@@ -6,11 +6,13 @@ Aplicación web desarrollada en Angular 17+ para la gestión y exploración de u
 
 ## 🚀 Características y Consigna
 
-- **Arquitectura de Componentes Standalone:** Organización modular con separación clara de responsabilidades en componentes, páginas, servicios e interfaces.
-- **Routing y Rutas Dinámicas:** Configuración de rutas estáticas (`/`, `/products`, `/about`, `/contact`) y una ruta dinámica (`/products/:id`) para la visualización detallada de cada obra.
-- **Navegación Interna:** Uso exclusivo de `routerLink` y `router-outlet` para una experiencia de navegación fluida entre vistas.
-- **Consumo de API Pública:** Integración con la **Open Library API** (`/works/` endpoint) mediante un servicio de Angular dedicado para la obtención dinámica de catálogos y detalles literarios.
-- **Interactividad y Formularios:** Inclusión de formularios reactivos con validaciones y sistema de manejo de errores de carga de imágenes con respaldos mediante recursos locales en SVG.
+- **Arquitectura Modular con Standalone Components:** Organización clara en componentes reusables (`about`, `contact-form`, `loader`, `product-cart`, `review`), páginas principales (`home`, `nosotros`, `products`, `product-detail`, `reviews`), interfaces TypeScript (`IPerson`, `IProduct`, `IReview`), pipes personalizados y servicios.
+- **Routing y Rutas Dinámicas:** Configuración de navegación entre páginas y una ruta dinámica (`/products/:id`) para consultar la información detallada de cada libro.
+- **Navegación Interna Fluida:** Uso de `routerLink` y `router-outlet` para el desplazamiento entre vistas sin recargar la aplicación.
+- **Consumo de API Pública y Servicios:** Integración con la **Open Library API** (`/works/` endpoint) mediante el servicio `ProductService` para obtener y procesar el catálogo y los detalles de cada obra en tiempo real.
+- **Transformación de Datos con Pipe:** Implementación de `CoverUrlPipe` para la generación dinámica de las URLs de portadas según la id devuelta por la API.
+- **Manejo de Errores e Imágenes Fallback:** Control del evento `(error)` en las portadas para reemplazar automáticamente las imágenes rotas por el recurso local `placeholder-book.svg`.
+- **Formularios e Interactividad:** Formulario en `reviews` para que el usuario pueda mandar su reseña.
 
 ---
 
@@ -43,7 +45,7 @@ http://localhost:4200/ (o el que te indique la consola si lo tenés ocupado)
 
 Plataforma elegida: Vercel
 
-Enlace a la aplicación: [[Proyecto en Vercel](https://gestion-de-productos-angular.vercel.app/)]
+Enlace a la aplicación: [[Proyecto en Vercel](https://el-rincon-de-libros.vercel.app/)]
 
 ## Capturas de pantalla
 
